@@ -197,7 +197,6 @@ def prepend(_, x, v):
         return torch.stack([v,x])
 
 def hash_map(_,*x):
-    # print("init hashmap", x)
     try:
         return {x[i].item(): x[i + 1] for i in range(0, len(x), 2)}
     except:

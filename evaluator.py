@@ -49,8 +49,7 @@ def eval(x, sigma, env=standard_env()):
         return params + args[0], sigma 
     elif op == 'fn':         # local function
         body = args[0]
-        proc =  Procedure(params, body, sigma, env), sigma
-        return proc
+        return Procedure(params, body, sigma, env), sigma
     elif op == 'sample':
         dist, sigma = eval(args[0], sigma, env)
         return dist.sample(), sigma
